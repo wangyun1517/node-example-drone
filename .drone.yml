@@ -1,0 +1,32 @@
+
+build:
+  image: node
+  commands:
+    - npm install --development
+    - npm test
+    - echo Hello World!
+notify:
+  slack:
+    webhook_url: https://hooks.slack.com/services/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
+    channel: general_es
+    username: drone
+publish:
+  ecr:
+    repo: 711655675495.dkr.ecr.eu-central-1.amazonaws.com/drone-lab
+    region: eu-central-1
+    tag: latest
+    file: Dockerfile
+    access_key: $$ECR_ACCESS_KEY
+    secret_key: $$ECR_SECRET_KEY
+pipeline:
+  ssh:
+    image: plugins/ssh
+    host:
+      - localhost
+      - 10.0.0.1
+    sleep: 5
+    ssh_key: $$SSH_KEY
+    user: ubuntu
+    port: 22
+    script:
+      - echo -e 'Hello world!'
