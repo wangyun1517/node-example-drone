@@ -4,7 +4,7 @@ build:
   commands:
     - npm install --development
     - npm test
-    - echo Hello World!
+    - echo Hello $$ECR_ACCESS_KEY
 notify:
   slack:
     webhook_url: https://hooks.slack.com/services/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
