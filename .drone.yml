@@ -11,5 +11,3 @@ publish:
     region: eu-central-1
     tag: latest
     file: Dockerfile
-    access_key: $$ECR_ACCESS_KEY
-    secret_key: $$ECR_SECRET_KEY
