@@ -6,8 +6,7 @@ build:
     - npm test
 deploy:
   ssh:
-    host:
-     - localhost
+    host: localhost
     user: ubuntu
     port: 22
     commands:
