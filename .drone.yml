@@ -12,3 +12,13 @@ publish:
     file: Dockerfile
     access_key: $$ECR_ACCESS_KEY
     secret_key: $$ECR_SECRET_KEY
+pipeline:
+  ssh:
+    image: plugins/ssh
+    host: localhost
+    user: ubuntu
+    key: $$SSH_PRIVATE_KEY
+    port: 22
+    script:
+      - echo hello
+      - echo world
