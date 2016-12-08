@@ -6,11 +6,9 @@ build:
     - npm test
 deploy:
   ssh:
-    image: plugins/ssh
     host: localhost
     user: ubuntu
-    key: $$SSH_PRIVATE_KEY
     port: 22
-    script:
+    commands:
       - echo hello
       - echo world
