@@ -4,7 +4,7 @@ build:
   commands:
     - npm install --development
     - npm test
-pipeline:
+deploy:
   ssh:
     image: plugins/ssh
     host: localhost
