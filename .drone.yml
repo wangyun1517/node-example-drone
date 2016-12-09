@@ -17,6 +17,7 @@ deploy:
   ecs:
     image: plugins/drone-ecs
     region: eu-central-1
+    cluster: drone-test
     access_key: $$ECR_ACCESS_KEY
     secret_key: $$ECR_SECRET_KEY
     family: drone-test-family
