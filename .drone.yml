@@ -15,14 +15,14 @@ publish:
 
 deploy:
   ecs:
-    image: drone-lab
+    image: plugins/drone-ecs
     region: eu-central-1
     access_key: $$ECR_ACCESS_KEY
     secret_key: $$ECR_SECRET_KEY
-    family: drone-test
+    family: drone-test-family
     image_name: drone-lab
     image_tag: latest
-    service: my-ecs-service
+    service: drone-test-service
     port_mappings:
       - 3000 3000
     memory: 128
