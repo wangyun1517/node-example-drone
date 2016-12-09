@@ -21,7 +21,7 @@ deploy:
     access_key: $$ECR_ACCESS_KEY
     secret_key: $$ECR_SECRET_KEY
     family: drone-test-family
-    image_name: drone-lab
+    image_name: arn:aws:ecr:eu-central-1:711655675495:repository/drone-lab
     image_tag: latest
     service: drone-test-service
     port_mappings:
