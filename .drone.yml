@@ -8,7 +8,7 @@ publish:
   ecr:
     access_key: $$ECR_ACCESS_KEY
     secret_key: $$ECR_SECRET_KEY
-    region: us-east-1
+    region: eu-central-1
     repo: 711655675495.dkr.ecr.eu-central-1.amazonaws.com/drone-lab
     tag: latest
     file: Dockerfile
