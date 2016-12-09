@@ -14,16 +14,11 @@ publish:
     file: Dockerfile
 
 deploy:
-  ecs:
-    image: plugins/drone-ecs
-    region: eu-central-1
-    cluster: drone-test
-    access_key: $$ECR_ACCESS_KEY
-    secret_key: $$ECR_SECRET_KEY
-    family: drone-test-family
-    image_name: 711655675495.dkr.ecr.eu-central-1.amazonaws.com/drone-lab
-    image_tag: latest
-    service: drone-test-service
-    port_mappings:
-      - 3000 3000
-    memory: 128
+  ssh:
+    host: 35.156.208.125
+    user: ubuntu
+    port: 22
+    commands:
+      - git -C /apps/node-example-drone pull origin master
+      - pm2 delete all
+      - pm2 start /apps/node-example-drone/index.js
