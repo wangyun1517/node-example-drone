@@ -19,6 +19,6 @@ deploy:
     port: 22
     commands:
       - docker pull 711655675495.dkr.ecr.eu-central-1.amazonaws.com/drone-lab:latest
-      - docker stop drone-lab || true
-      - docker rm drone-lab || true
-      - docker run -d -p 3000 --name drone-lab 711655675495.dkr.ecr.eu-central-1.amazonaws.com/drone-lab:latest
+      - docker stop drone-lab
+      - docker rm drone-lab
+      - docker run -d -p 3000:3000 --name drone-lab 711655675495.dkr.ecr.eu-central-1.amazonaws.com/drone-lab:latest
