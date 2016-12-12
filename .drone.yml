@@ -4,12 +4,21 @@ build:
   commands:
     - npm install --development
     - npm test
+publish:
+  ecr:
+    access_key: $$ECR_ACCESS_KEY
+    secret_key: $$ECR_SECRET_KEY
+    region: eu-central-1
+    repo: 711655675495.dkr.ecr.eu-central-1.amazonaws.com/drone-lab
+    tag: latest
+    file: Dockerfile
 deploy:
   ssh:
     host: 35.156.208.125
     user: ubuntu
     port: 22
     commands:
-      - git -C /apps/node-example-drone pull origin master
-      - pm2 delete all
-      - pm2 start /apps/node-example-drone/index.js
+      - docker pull 711655675495.dkr.ecr.eu-central-1.amazonaws.com/drone-lab:latest
+      - docker stop drone-lab || true
+      - docker rm drone-lab || true
+      - docker run -d -p 3000 --name drone-lab 711655675495.dkr.ecr.eu-central-1.amazonaws.com/drone-lab:latest
