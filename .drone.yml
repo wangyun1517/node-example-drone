@@ -4,15 +4,6 @@ build:
   commands:
     - npm install --development
     - npm test
-publish:
-  ecr:
-    access_key: $$ECR_ACCESS_KEY
-    secret_key: $$ECR_SECRET_KEY
-    region: eu-central-1
-    repo: 711655675495.dkr.ecr.eu-central-1.amazonaws.com/drone-lab
-    tag: latest
-    file: Dockerfile
-
 deploy:
   ssh:
     host: 35.156.208.125
