@@ -10,7 +10,7 @@ publish:
     password: $$DOCKER_PASSWORD
     image: dagonzadub/drone-selfsigned-docker
     #email: $$DOCKER_EMAIL
-    registry: 35.156.218.164
+    registry: 35.156.218.164:2375
     repo: node-example
     tag: latest
     insecure: true
