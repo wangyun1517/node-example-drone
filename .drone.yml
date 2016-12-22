@@ -11,6 +11,8 @@ publish:
     email: $$DOCKER_EMAIL
     repo: 35.156.218.164:5000/node-example
     tags: latest
+    env:
+      - DOCKER_LAUNCH_DEBUG=true
 deploy:
   ssh:
     host: 35.156.208.125
