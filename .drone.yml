@@ -6,10 +6,10 @@ build:
     - npm test
 publish:
   docker:
-    image: dagonzadub/drone-selfsigned-docker
     username: $$DOCKER_USERNAME
     password: $$DOCKER_PASSWORD
-    repo: 35.156.218.164:5000
+    email: $$DOCKER_EMAIL
+    #repo: 35.156.218.164:5000
     tags: latest
     insecure: true
 deploy:
