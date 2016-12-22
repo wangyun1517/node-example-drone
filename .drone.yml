@@ -10,15 +10,4 @@ publish:
     password: $$DOCKER_PASSWORD
     email: $$DOCKER_EMAIL
     #repo: 35.156.218.164:5000
-    tags: latest
     insecure: true
-deploy:
-  ssh:
-    host: 35.156.208.125
-    user: ubuntu
-    port: 22
-    commands:
-      - docker pull 35.156.218.164:5000/node-example:latest
-      - docker stop drone-lab
-      - docker rm drone-lab
-      - docker run -d -p 3000:3000 --name drone-lab 35.156.218.164:5000/node-example:latest
