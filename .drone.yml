@@ -8,7 +8,7 @@ publish:
   docker:
     username: $$DOCKER_USERNAME
     password: $$DOCKER_PASSWORD
-    repo: 35.156.218.164:5000/node-example
+    repo: 35.156.218.164:5000
     tags: latest
     env:
       - DOCKER_LAUNCH_DEBUG=true
