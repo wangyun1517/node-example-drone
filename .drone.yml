@@ -6,6 +6,8 @@ build:
     - npm test
 publish:
   docker:
+    environment:
+      - DOCKER_LAUNCH_DEBUG=true
     username: $$DOCKER_USERNAME
     password: $$DOCKER_PASSWORD
     image: dagonzadub/drone-selfsigned-docker
