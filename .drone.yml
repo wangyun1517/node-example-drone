@@ -8,10 +8,9 @@ publish:
   docker:
     username: $$DOCKER_USERNAME
     password: $$DOCKER_PASSWORD
+    email: $$DOCKER_USERNAME
     repo: 35.156.218.164:5000
     tags: latest
-    env:
-      - DOCKER_LAUNCH_DEBUG=true
 deploy:
   ssh:
     host: 35.156.208.125
