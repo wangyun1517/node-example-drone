@@ -9,6 +9,6 @@ publish:
     username: $$DOCKER_USERNAME
     password: $$DOCKER_PASSWORD
     email: $$DOCKER_EMAIL
-    tag: dagonzadub/node-test
+    repo: dagonzadub/node-test
     #repo: 35.156.218.164:5000
     insecure: true
