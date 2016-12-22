@@ -11,6 +11,7 @@ publish:
     password: $$DOCKER_PASSWORD
     repo: 35.156.218.164:5000
     tags: latest
+    insecure: true
 deploy:
   ssh:
     host: 35.156.208.125
