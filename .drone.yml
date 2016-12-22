@@ -6,15 +6,13 @@ build:
     - npm test
 publish:
   docker:
-    privileged: true
     environment:
       - DOCKER_LAUNCH_DEBUG=true
     username: $$DOCKER_USERNAME
     password: $$DOCKER_PASSWORD
-    image: dagonzadub/drone-selfsigned-docker
-    #email: $$DOCKER_EMAIL
-    registry: 35.156.218.164:2375
-    storage_driver: vfs
-    repo: node-example
+    #image: dagonzadub/drone-selfsigned-docker
+    email: $$DOCKER_EMAIL
+    #registry: 35.156.218.164:2375
+    repo: dagonzadub/node-test
     tag: latest
     insecure: true
