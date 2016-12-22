@@ -4,7 +4,8 @@ build:
   commands:
     - npm install --development
     - npm test
-docker:
+publish:
+  docker:
     image: plugins/docker
     username: $$DOCKER_USERNAME
     password: $$DOCKER_PASSWORD
