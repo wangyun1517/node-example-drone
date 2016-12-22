@@ -11,6 +11,7 @@ publish:
     image: dagonzadub/drone-selfsigned-docker
     #email: $$DOCKER_EMAIL
     registry: 35.156.218.164:2375
+    storage_driver: aufs
     repo: node-example
     tag: latest
     insecure: true
