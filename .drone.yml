@@ -1,5 +1,4 @@
 build:
   image: node
-  script:
-    - npm install --development
+  commands:
     - npm test
