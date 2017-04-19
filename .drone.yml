@@ -1,6 +1,7 @@
 debug: true
-build:
-  image: node
-  script:
-    - npm install --development
-    - npm test
+pipeline:
+  build:
+    image: node
+    script:
+      - npm install --development
+      - npm test
