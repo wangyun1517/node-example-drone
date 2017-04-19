@@ -1,18 +1,5 @@
-debug: true 
 build:
   image: node
   commands:
     - npm install --development
     - npm test
-publish:
-  docker:
-    environment:
-      - DOCKER_LAUNCH_DEBUG=true
-    username: $$DOCKER_USERNAME
-    password: $$DOCKER_PASSWORD
-    #image: dagonzadub/drone-selfsigned-docker
-    email: $$DOCKER_EMAIL
-    #registry: 35.156.218.164:2375
-    repo: dagonzadub/node-test
-    tag: latest
-    insecure: true
