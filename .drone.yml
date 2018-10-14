@@ -1,7 +1,7 @@
 debug: true
 pipeline:
   build:
-    image: node
+    image: node:8.11.2
     commands:
       - npm install --development
       - npm test
